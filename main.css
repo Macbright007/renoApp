@@ -13,10 +13,11 @@ label {
 }
 
 nav {
+  background-color: #fff;
   position: fixed;
   width: 100%;
   z-index: 2;
-  background-color: transparent;
+  /* background-color: transparent; */
   /* padding-block: 1rem; */
   border-bottom: 2px solid #91b2ac;
 }
@@ -34,7 +35,7 @@ nav {
 
 .navContainer > h1 {
   padding: .6rem 1rem;
-  background-color: #fff;
+  /* background-color: #fff; */
   color: #094c3b;
   font-size: 1.7rem;
 }
@@ -46,7 +47,6 @@ nav {
 }
 
 .navItems {
-  background-color: #fff;
   padding: 1.2rem 4rem 1rem 1rem;
   display: flex;
   align-items: center;
@@ -144,16 +144,22 @@ nav {
   }
 
   .navItems {
+    padding: 0;
     display: flex;
     flex-direction: column;
   }
 
   .navItems > a {
+    width: 100%;
     color: #094c3b;
     font-size: 18px;
-    padding-block: 0.6rem;
-    text-align: center;
+    padding: 0.6rem;
+    text-align: right;
     border-bottom: 4px solid #fff;
+  }
+
+  .navItems > a:last-child{
+    margin-bottom: 1.5rem;
   }
 
   label {
@@ -164,8 +170,20 @@ nav {
     font-size: 2rem;
     cursor: pointer;
   }
-
   .navRight {
+    position: absolute;
+    width: 340px;
+    padding: 1.8rem;
+    top: 4.4rem;
+    right: 3px;
+    z-index: 1;
+    background-color: #91b2ac;
+    opacity: .97;
+    border-bottom: 4px solid #094c3b;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+  /* .navRight {
     display: none;
     flex-direction: column;
     height: 70vh;
@@ -179,7 +197,7 @@ nav {
     background-color: #91b2ac;
     opacity: 0.9;
     border-bottom: 4px solid #094c3b;
-  }
+  } */
 
   .btn__btn {
     width: 262px;
@@ -188,6 +206,7 @@ nav {
 
   #toggle:checked + .navRight {
     display: block;
+    transform: none;
   }
 
   .hero {
